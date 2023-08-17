@@ -1,0 +1,34 @@
+<div class="note">
+    <input *ngIf="edit" [(ngModel)]="note.titel" type="text">
+    <h3 *ngIf="!edit">
+        {{note.titel}}
+    </h3>
+    <hr>
+    <textarea *ngIf="edit" [(ngModel)]="note.content"></textarea>
+    <p *ngIf="!edit">
+        {{note.content}}
+    </p>
+    <hr>
+    <div>
+        <button (click)="changeLikedStatus()"><img src="../../../assets/icons/heart_{{note.liked}}.png" alt="" srcset=""></button>
+        <div [ngSwitch]="true">
+            <ng-template [ngSwitchCase]="!edit && note.type == 'note'">
+                <button (click)="openEdit()"><img src="../../../assets/icons/pencil.png" alt="" srcset=""></button>
+                <button (click)="moveToTrash()"><img src="../../../assets/icons/trash.png" alt=""
+                        srcset=""></button>
+            </ng-template>
+            <ng-template [ngSwitchCase]="edit && note.type == 'note'">
+                <button (click)="closeEdit()"><img src="../../../assets/icons/disk.png" alt="" srcset=""></button>
+            </ng-template>
+            <ng-template [ngSwitchCase]="!edit && note.type == 'trash'">
+                <button (click)="openEdit()"><img src="../../../assets/icons/pencil.png" alt="" srcset=""></button>
+                <button (click)="moveToNotes()"><img src="../../../assets/icons/trash-undo-alt.png" alt=""
+                        srcset=""></button>
+                <button (click)="deleteNote()"><img src="../../../assets/icons/trash.png" alt="" srcset=""></button>
+            </ng-template>
+            <ng-template [ngSwitchCase]="edit && note.type == 'trash'">
+                <button (click)="closeEdit()"><img src="../../../assets/icons/disk.png" alt="" srcset=""></button>
+            </ng-template>
+        </div>
+    </div>
+</div>

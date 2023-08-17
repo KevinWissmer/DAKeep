@@ -1,0 +1,81 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 64px;
+    background-color: #181820;
+
+    >nav {
+        display: flex;
+        align-items: center;
+    }
+
+    >div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        color: #124658;
+        font-size: 36px;
+
+        >img {
+            height: 46px;
+            width: 48px;
+            object-fit: cover;
+            object-position: left;
+        }
+
+        >p {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 128px;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+button {
+    background-color: #364856;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    margin: 8px;
+}
+
+.btn_active {
+    border: 2px dashed #6d9abd;
+}
+
+button:hover {
+    background-color: #516d82;
+    cursor: pointer;
+}
+
+.heartbtn {
+    background-color: white;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 2px solid #181820;
+    cursor: pointer;
+
+    >img {
+        height: 16px;
+    }
+}
+
+.heartbtn:hover {
+    border: 2px solid #6d9abd;
+}

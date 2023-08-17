@@ -1,0 +1,11 @@
+<div class="notes_wrapper">
+    <div class="notes_input">
+        <input type="text">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>ABSCHICKEN</button>
+    </div>
+    <div>
+        <app-note *ngFor="let note of noteList" [note]="note"></app-note>
+    </div>
+</div>
+

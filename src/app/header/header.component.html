@@ -1,0 +1,11 @@
+<header>
+    <div>
+        <img src="../../assets/header_logo copy.svg" alt="" srcset="">
+        <p>DAKeep</p>
+    </div>
+    <nav>
+        <div (click)="changeHeartstatus()" class="heartbtn"><img src="../../assets/icons/heart_{{heartstatus}}.png" alt="" srcset=""></div>
+        <button (click)="changeListType('notes')" [ngClass]="listType == 'notes' ? 'btn_active' : ''">Notes</button>
+        <button (click)="changeListType('trash')" [ngClass]="{'btn_active' : listType == 'trash'}">Trash</button>
+    </nav>
+</header>

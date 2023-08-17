@@ -1,0 +1,86 @@
+.note {
+    height: 250px;
+    width: 250px;
+    padding: 16px;
+    margin: 16px;
+    background-color: #364856;
+    border-radius: 16px;
+    border: 2px solid #232e37;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    >h3 {
+        margin: 0;
+        height: 20px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    >hr {
+        width: 100%;
+    }
+
+    >p{
+        width: 100%;
+        word-break: break-all;
+        height: 100px;
+        overflow: auto;
+    }
+
+    >div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        > div{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    >input {
+        width: 100%;
+        height: 20px;
+        color: whitesmoke;
+        background-color: #364856;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        padding: 0 8px;
+    }
+
+    >textarea {
+        width: 100%;
+        height: 100px;
+        resize: none;
+        color: whitesmoke;
+        background-color: #364856;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+}
+
+button {
+    margin-left: 8px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 2px solid #181820;
+    cursor: pointer;
+
+    >img {
+        height: 16px;
+    }
+}
+
+button:hover {
+    border: 2px solid #6d9abd;
+}
