@@ -3,5 +3,5 @@ export interface Note {
     type: "note" | "trash";
     titel:string;
     content:string;
-    liked:"liked" | "disliked";
+    marked: boolean;
 }

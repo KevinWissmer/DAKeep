@@ -8,15 +8,24 @@ import { Note } from '../interfaces/note.interface';
 })
 export class NoteListComponent {
   noteList: Note[] = [];
-  status: "notes" | "trash" = "notes"
+  favFilter: "all" | "fav" = "all";
+  status: "notes" | "trash" = "notes";
 
   constructor() {
     this.noteList = this.getDummyData()
   }
 
+  changeFavFilter(filter:"all" | "fav"){
+    this.favFilter = filter;
+  }
 
-
-
+  changeTrashStatus(){
+    if(this.status == "trash"){
+      this.status = "notes";
+    } else {
+      this.status = "trash";
+    }
+  }
 
 
 
@@ -28,7 +37,7 @@ export class NoteListComponent {
         type: "note",
         titel: "Block, Inline, and Inline-Block",
         content: "https://www.youtube.com/watch?v=x_i2gga-sYg",
-        liked: "disliked",
+        marked: true,
       },
       {
         id: "25sd4f561w54sdf",
@@ -37,14 +46,14 @@ export class NoteListComponent {
         content: `kind p > b   (direktes kind) 
         nachfahren p b  (alle nachfahren)
         geschwister p ~ b (auf gleicher ebene ist VOR dem p ein b)`,
-        liked: "disliked",
+        marked: true,
       },
       {
         id: "54a4s6d546ff",
         type: "note",
         titel: "aufräumen",
         content: "Wohnzimmer saugen",
-        liked: "disliked",
+        marked: false,
       },
       {
         id: "2a35s4d654a6s4d",
@@ -55,7 +64,7 @@ export class NoteListComponent {
         a:hover 
         a:active
         merkspruch: LoVe HAte`,
-        liked: "disliked",
+        marked: true,
       }
     ];
   }

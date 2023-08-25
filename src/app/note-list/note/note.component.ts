@@ -8,14 +8,22 @@ import { Note } from '../../interfaces/note.interface';
 })
 export class NoteComponent {
   @Input() note!:Note;
-  edit:boolean = false;
+  edit = false;
+  hovered = false;
   
-  changeLikedStatus(){
-    if(this.note.liked == "liked"){
-      this.note.liked = "disliked";
-    } else {
-      this.note.liked = "liked";
+  changeMarkedStatus(){
+    this.note.marked = !this.note.marked;
+  }
+
+  deleteHovered(){
+    if(!this.edit){
+      this.hovered = false;
     }
+  }
+
+  logIt(){
+    console.log(this.hovered);
+    
   }
 
   openEdit(){
@@ -28,11 +36,11 @@ export class NoteComponent {
   }
 
   moveToTrash(){
-
+    this.note.type = 'trash';
   }
 
   moveToNotes(){
-
+    this.note.type = 'note';
   }
 
   deleteNote(){
