@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Note } from '../../interfaces/note.interface';
+import { NoteListService } from '../../firebase-services/note-list.service'
 
 @Component({
   selector: 'app-note',
@@ -11,6 +12,8 @@ export class NoteComponent {
   edit = false;
   hovered = false;
   
+  constructor(private noteService: NoteListService){}
+
   changeMarkedStatus(){
     this.note.marked = !this.note.marked;
   }
@@ -19,11 +22,6 @@ export class NoteComponent {
     if(!this.edit){
       this.hovered = false;
     }
-  }
-
-  logIt(){
-    console.log(this.hovered);
-    
   }
 
   openEdit(){
