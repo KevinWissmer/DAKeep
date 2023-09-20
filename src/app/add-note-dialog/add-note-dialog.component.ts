@@ -1,4 +1,6 @@
 import { Component, Output, EventEmitter} from '@angular/core';
+import { NoteListService } from '../firebase-services/note-list.service'
+import { Note } from '../interfaces/note.interface';
 
 @Component({
   selector: 'app-add-note-dialog',
@@ -7,4 +9,26 @@ import { Component, Output, EventEmitter} from '@angular/core';
 })
 export class AddNoteDialogComponent {
   @Output() addDialogClosed: EventEmitter<boolean> = new EventEmitter();
+
+  title = "";
+  content = "";
+
+  constructor(private noteService: NoteListService){
+
+  }
+
+  addNote(){
+    let note:Note = {
+      type: "note",
+      title: this.title,
+      content: this.content,
+      marked: false,
+    }
+    this.noteService.addNote(note, "notes");
+    this.addDialogClosed.emit(false)
+  }
+
+
+
+
 }
