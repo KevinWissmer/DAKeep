@@ -14,7 +14,6 @@ export class NoteListComponent {
   status: "notes" | "trash" = "notes";
 
   constructor(private noteService: NoteListService) {
-
   }
   
   getList(): Note[]{ 
@@ -38,6 +37,7 @@ export class NoteListComponent {
       this.status = "notes";
     } else {
       this.status = "trash";
+      this.favFilter = "all";
     }
   }
 

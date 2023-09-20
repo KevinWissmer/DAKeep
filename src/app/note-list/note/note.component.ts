@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NoteListService } from '../../firebase-services/note-list.service'
 import { Note } from '../../interfaces/note.interface';
+import { NoteListService } from '../../firebase-services/note-list.service'
 
 @Component({
   selector: 'app-note',
